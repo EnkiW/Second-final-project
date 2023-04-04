@@ -35,14 +35,12 @@ const introDots = document.querySelectorAll('.intro-dot');
 const introArrows = document.querySelectorAll('.intro-arrow');
 let currentSlide = 0;
 
-// Add click event listener to dots
 introDots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
         goToSlide(index);
     });
 });
 
-// Add click event listener to arrows
 introArrows.forEach(arrow => {
     arrow.addEventListener('click', event => {
         event.preventDefault();
@@ -54,7 +52,6 @@ introArrows.forEach(arrow => {
     });
 });
 
-// Show slide and update dots
 function goToSlide(slideIndex) {
     if (slideIndex < 0) {
         slideIndex = introBlocks.length - 1;
@@ -67,7 +64,6 @@ function goToSlide(slideIndex) {
     currentSlide = slideIndex;
 }
 
-// Auto slide every 5 seconds
 setInterval(() => {
     goToSlide(currentSlide + 1);
 }, 5000);
